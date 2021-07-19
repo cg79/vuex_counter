@@ -1,4 +1,6 @@
-# hello-world
+# counter
+
+vue app using 4 different counter approaches
 
 ## Project setup
 ```

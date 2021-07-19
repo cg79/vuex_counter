@@ -27,12 +27,48 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+
+    <Counter1 text="pdata.initialValue" v-bind:counterValue="pdata.initialValue"></Counter1>
+
+    <Counter2  v-bind:pdata="pdata" ></Counter2>
+
+    <Counter3 v-bind:initialValue="pdata.initialValue" v-bind:increment="pdata.increment"></Counter3>
+
+    <Counter4  v-bind:pdata="pdata"></Counter4>
+
   </div>
+
+  
+
 </template>
 
 <script>
+
+import Counter1 from './counter/counter1.vue';
+import Counter2 from './counter/counter2.vue';
+import Counter3 from './counter/counter3.vue';
+import Counter4 from './counter/counter4.vue';
+
 export default {
   name: 'HelloWorld',
+  data(){
+    return {
+      pdata: {
+        initialValue: 9,
+        increment() {
+          // eslint-disable-next-line no-debugger
+          debugger;
+          this.initialValue ++;
+        }
+      }
+    }
+  },
+  components: {
+      Counter1,
+      Counter2,
+      Counter3,
+      Counter4,
+  },
   props: {
     msg: String
   }
